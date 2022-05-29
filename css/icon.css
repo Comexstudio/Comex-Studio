@@ -7,3 +7,15 @@
     height: 86px;
     object-fit: cover;
 }
+.number-phone{
+    text-decoration: none;
+    color: black;
+}
+.dic-mail{
+    text-decoration: none;
+    color: black;
+}
+#portafolio{
+    display: flex;
+    justify-content: center;
+}

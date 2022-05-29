@@ -20,6 +20,23 @@
         <link rel="stylesheet" href="css/icon.css">
         <link rel="stylesheet" href="css/whatsapp.css">
     </head>
+    <!--Main principal-->
+
+    <?php 
+
+    $myemail = 'mpaniagua@comexstudio.com';
+    $name = $_POST['nombre'];
+    $email = $_POST['email'];
+    $message = $_POST['mensaje'];
+
+    $to = $myemail;
+    $email_subject = "Nuevo mensaje: $subject";
+    $email_body = "Haz recibido un nuevo mensaje del sitio web Comex Studio. \n Nombre: $name \n Correo: $email \n Mensaje: \n $message";
+    $headers = "From: $email";
+
+mail($to, $email_subject, $email_body, $headers);
+
+    ?>
     <body id="page-top">
     <!-- Messenger plugin del chat Code -->
     <div id="fb-root"></div>
@@ -172,61 +189,27 @@
                 </div>
             </div>
         </section>
-        <!-- Portfolio-->
-        <div id="portfolio">
+                <!-- Portfolio-->
+                <div id="portfolio">
             <div class="container-fluid p-0">
-                <div class="row g-0">
+                <div id="portafolio" class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+                        <a class="portfolio-box" href="assets/img/potafolio/logo1.png" title="www.gruponosara.com">
+                            <img class="img-fluid" src="assets/img/logo1.png" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Sitio Web</div>
                                 <div class="project-name">Grupo Nosara</div>
+                                <div class="project-name">HTML, CSS, Javascript</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+                        <a class="portfolio-box" href="assets/img/potafolio/logo2.png" title="www.nicoyalex.com">
+                            <img class="img-fluid" src="assets/img/logo2.png" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Sitio Web</div>
                                 <div class="project-name">Nicoyalex</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                            <div class="portfolio-box-caption p-3">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
+                                <div class="project-name">HTML, CSS, Javascript</div>
                             </div>
                         </a>
                     </div>
@@ -245,64 +228,51 @@
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div class="col-lg-6">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Nombre Completo</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Nombre requerido.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+
+
+                        <!--- Formulario  --->
+                        <form data-sb-form-api-token="API_TOKEN" id="contactForm"  method="post" action="enviar.php" class="formulario">
+                        <!-- Nombre -->
+                        <div class="form-floating mb-3">
+                            <input  class="form-control" id="name" data-sb-validations="required" type="text" placeholder="Nombre" nombre="nombre" required>
+                            <!--- Opcional --->
+                            <label for="name">Nombre Completo</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Nombre requerido.</div>
+                        </div>
+                        
+                        <!-- Email --->
+                        <div class="form-floating mb-3">
+                            <input  class="form-control" id="email" type="text" placeholder="name@example.com" data-sb-validations="required,email" name="email" required>
+                            <!-- Opcional -->
                                 <label for="email">Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Email requerido.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">Email requerido.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email no valido.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Numero de telefono</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Numero querido</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Mensaje</label>
+                        </div>
+
+                        <!--- Mensaje --->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" type="text" name="mensaje" required></textarea>
+                            <!-- Opcional -->
+                                    <label for="message">Mensaje</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">Mensaje requerido</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Enviado Correctamente!</div>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error al eviar formulario</div></div>
-                            <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button></div>
+                        </div>
+                        <input class="boton" type="submit" value="Enviar">
+
+                        <!-- Boton de envio --->
                         </form>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>(506) 86632139</div>
-                        
-                    </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                        <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>
+                        <!-- Icon -->
+                        <div><a  class="number-phone" href="tel:+50686632139">+506 86632139</a></div>
+                            <svg class="icon-iphone" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                        </svg>
+                        <div><a class="dic-mail" href="mailto:mpaniagua@comexstudio.com">mpaniagua@comexstudio.com</div>
                 </div>
             </div>
         </section>
@@ -317,6 +287,7 @@
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Comex Studio</div></div>
         </footer>
         <!-- Bootstrap core JS-->
+        <script src="js/alert.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>

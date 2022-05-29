@@ -7079,6 +7079,7 @@ textarea.form-control-lg {
 
 .justify-content-center {
   justify-content: center !important;
+  text-align: center;
 }
 
 .justify-content-between {
