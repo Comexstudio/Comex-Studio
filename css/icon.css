@@ -19,3 +19,10 @@
     display: flex;
     justify-content: center;
 }
+.btn-envio{
+    display: flex;
+    justify-content: center;
+}
+.img-servicios{
+    width: 100%;
+}

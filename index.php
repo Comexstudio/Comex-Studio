@@ -19,8 +19,23 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/icon.css">
         <link rel="stylesheet" href="css/whatsapp.css">
+        <link rel="stylesheet" href="css/btn.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4QTWW0NMC"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S4QTWW0NMC');
+        </script>
     </head>
-    <body id="page-top">
+    <body id="page-top" class="hidden">
+
     <!-- Messenger plugin del chat Code -->
     <div id="fb-root"></div>
 
@@ -71,61 +86,32 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">Estudio de Diseño Web y Desarrollo</h1>
+                        <h1 class="animate__animated animate__bounce animate__zoomInDown">Estudio de Diseño Web y Desarrollo</h1>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">Cuentanos que te gustaria desarrollar?</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Empecemos</a>
+                        <!-- boton de inicio -->
+                        <div class="btn-inicio">
+                        <button class="btn__inicio">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
+                            <a class="btn-listo" href="#about">Listo</a>
+                        </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- About-->
         <section class="page-section bg-primary" id="about">
-            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="assets/img/img1.jpg" class="d-block w-50" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Desarrollo Web</h5>
-                      <p>Nos encargamos del desarrollo del sitio web.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="assets/img/img3.jpg" class="d-block w-50" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Soporte T.I</h5>
-                      <p>Brindamos Soporte por conexion remota</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="assets/img/img2.jpg" class="d-block w-50" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Redes</h5>
-                      <p>Trabajamos cableado estructurado.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+            <div class="servicios-img">
+                <img class="img-servicios" src="assets/img/servicios.png" alt="">
+            </div>
         </section>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">Servicios</h2>
+                <h2 class="text-center mt-0" id="services_">Servicios</h2>
                 <hr class="divider" />
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-3 col-md-6 text-center">
@@ -156,7 +142,7 @@
                                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                             </svg>
                             </div>
-                            <h3 class="h4 mb-2">Integracion de Redes Sociales</h3>
+                            <h3 class="h4 mb-2">Redes Sociales</h3>
                             <p class="text-muted mb-0">Conectamos tu sitio web con todas tus redes sociales.</p>
                         </div>
                     </div>
@@ -217,7 +203,7 @@
                         <form data-sb-form-api-token="API_TOKEN" id="contactForm"  method="post" action="enviar.php" class="formulario">
                         <!-- Nombre -->
                         <div class="form-floating mb-3">
-                            <input  class="form-control" id="name" data-sb-validations="required" type="text" placeholder="Nombre" nombre="nombre" required>
+                            <input  class="form-control" id="name" data-sb-validations="required" type="text" placeholder="Nombre" name="nombre" required>
                             <!--- Opcional --->
                             <label for="name">Nombre Completo</label>
                             <div class="invalid-feedback" data-sb-feedback="name:required">Nombre requerido.</div>
@@ -239,9 +225,17 @@
                                     <label for="message">Mensaje</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">Mensaje requerido</div>
                         </div>
-                        <input class="boton" type="submit" value="Enviar">
-
                         <!-- Boton de envio --->
+                        <div class="btn-envioo">
+                        <button class="cta">
+                            <span>Enviar</span>
+                            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                            </button>
+                        </button>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -278,10 +272,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
