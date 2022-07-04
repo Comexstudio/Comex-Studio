@@ -91,7 +91,6 @@ mail($to, $email_subject, $email_body, $headers);
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Proyectos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     </ul>
                 </div>
@@ -174,33 +173,6 @@ mail($to, $email_subject, $email_body, $headers);
                 </div>
             </div>
         </section>
-                <!-- Portfolio-->
-                <div id="portfolio">
-            <div class="container-fluid p-0">
-                <div id="portafolio" class="row g-0">
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/potafolio/logo1.png" title="www.gruponosara.com">
-                            <img class="img-fluid" src="assets/img/logo1.png" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Sitio Web</div>
-                                <div class="project-name">Grupo Nosara</div>
-                                <div class="project-name">HTML, CSS, Javascript</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/potafolio/logo2.png" title="www.nicoyalex.com">
-                            <img class="img-fluid" src="assets/img/logo2.png" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Sitio Web</div>
-                                <div class="project-name">Nicoyalex</div>
-                                <div class="project-name">HTML, CSS, Javascript</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
