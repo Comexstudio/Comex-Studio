@@ -1,1 +1,0 @@
-alert("Datos enviados correctamente");
