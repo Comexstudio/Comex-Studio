@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,17 +21,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
+
+<?php 
+
+        $myemail = 'info@comexstudio.com';
+        $name = $_POST['nombre'];
+        $email = $_POST['email'];
+        $subjet = $_POST['subjet'];
+        $message = $_POST['message'];
+
+        $to = $myemail;
+        $email_subject = "Nuevo mensaje: $subject";
+        $email_body = "Haz recibido un nuevo mensaje del sitio web Comex Studio. \n Nombre: $name \n Correo: $email \n Asunto: $subjet \n Mensaje: \n $message";
+        $headers = "From: $email";
+
+        mail($to, $email_subject, $email_body, $headers);
+
+?>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner"></div>
@@ -66,37 +83,37 @@
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 id="h1_inicio" class="m-0"><span><img src="img/icon.jpg" alt=""></span></i>Comex_Studio</h1>
+            <a href="../index.html" class="navbar-brand p-0">
+                <h1 id="h1_inicio" class="m-0"><span><img src="../img/icon.jpg" alt=""></span></i>Comex_Studio</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Inicio</a>
-                    <a href="about.html" class="nav-item nav-link">Sobre</a>
-                    <a href="service.html" class="nav-item nav-link">Servicios</a>
+                    <a href="../index.html" class="nav-item nav-link">Inicio</a>
+                    <a href="../about.html" class="nav-item nav-link">Sobre</a>
+                    <a href="../service.html" class="nav-item nav-link">Servicios</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
                         <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="detail.html" class="dropdown-item">Detalledes de Blog</a>
+                            <a href="../blog.html" class="dropdown-item">Blog Grid</a>
+                            <a href="../detail.html" class="dropdown-item">Detalledes de Blog</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Paginas</a>
                         <div class="dropdown-menu m-0">
-                            <a href="price.html" class="dropdown-item">Plan de Precios</a>
-                            <a href="feature.html" class="dropdown-item">Nuestras Caracteristicas</a>
-                            <a href="team.html" class="dropdown-item">Miembros de Equipo</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonios</a>
-                            <a href="quote.html" class="dropdown-item">Cotizacion</a>
+                            <a href="../price.html" class="dropdown-item">Plan de Precios</a>
+                            <a href="../feature.html" class="dropdown-item">Nuestras Caracteristicas</a>
+                            <a href="../team.html" class="dropdown-item">Miembros de Equipo</a>
+                            <a href="../testimonial.html" class="dropdown-item">Testimonios</a>
+                            <a href="../quote.html" class="dropdown-item">Cotizacion</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link active">Contacto</a>
+                    <a href="../contact.html" class="nav-item nav-link active">Contacto</a>
                 </div>
-                <butaton class="btn text-primary ms-3" data-bs-toggle="modal"><span><img class="pais" src="img/costa_rica.jpg" alt=""></span></butaton>
+                <butaton class="btn text-primary ms-3" data-bs-toggle="modal"><span><img class="pais" src="../img/costa_rica.jpg" alt=""></span></butaton>
             </div>
         </nav>
 
@@ -176,19 +193,19 @@
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
 
                     <!--- Formulario  --->
-                    <form method="post" action="email/enviar.php">
+                    <form method="post" action="enviar.php">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" name="nombre" class="form-control border-0 bg-light px-4" placeholder="Nombre" style="height: 55px;" required>
+                                <input id="name" type="text" class="form-control border-0 bg-light px-4" placeholder="Nombre" style="height: 55px;" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" name="email"  class="form-control border-0 bg-light px-4" placeholder="Email" style="height: 55px;" required>
+                                <input id="email" type="email" class="form-control border-0 bg-light px-4" placeholder="Email" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
-                                <input type="text" name="subjet"  class="form-control border-0 bg-light px-4" placeholder="Asunto" style="height: 55px;" required>
+                                <input id="subjet" type="text" class="form-control border-0 bg-light px-4" placeholder="Asunto" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" name="message" rows="4" placeholder="Mensage" required></textarea>
+                                <textarea id="message" class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Mensage" required></textarea>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
@@ -216,15 +233,15 @@
         <div class="container py-5 mb-5">
             <div class="bg-white">
                 <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                    <img src="img/vendor-2.jpg" alt="">
-                    <img src="img/vendor-3.jpg" alt="">
-                    <img src="img/vendor-4.jpg" alt="">
-                    <img src="img/vendor-5.jpg" alt="">
-                    <img src="img/vendor-6.jpg" alt="">
-                    <img src="img/vendor-7.jpg" alt="">
-                    <img src="img/vendor-8.jpg" alt="">
-                    <img src="img/vendor-9.jpg" alt="">
+                    <img src="../img/vendor-1.jpg" alt="">
+                    <img src="../img/vendor-2.jpg" alt="">
+                    <img src="../img/vendor-3.jpg" alt="">
+                    <img src="../img/vendor-4.jpg" alt="">
+                    <img src="../img/vendor-5.jpg" alt="">
+                    <img src="../img/vendor-6.jpg" alt="">
+                    <img src="../img/vendor-7.jpg" alt="">
+                    <img src="../img/vendor-8.jpg" alt="">
+                    <img src="../img/vendor-9.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -238,15 +255,20 @@
             <div class="row gx-5">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand">
-                            <h1 id="h1_inicio" class="m-0"><span><img src="img/icon.jpg" alt=""></span></i>Comex Studio</h1>         </a>
+                        <a href="../index.html" class="navbar-brand">
+                            <h1 id="h1_inicio" class="m-0"><span><img src="../img/icon.jpg" alt=""></span></i>Comex Studio</h1>         </a>
                         <p class="mt-3 mb-4">Inscríbete para recibir constantemente nuestras promociones y información nueva constantemente</p>
+
+
                         <form action="">
                             <div class="input-group">
                                 <input type="text" class="form-control border-white p-3" placeholder="Tu email">
                                 <button class="btn btn-dark">Inscribirse</button>
                             </div>
                         </form>
+
+
+
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-6">
@@ -279,13 +301,13 @@
                                 <h3 class="text-light mb-0">Enlaces rápidos</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Inicio</a>
-                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>Sobre</a>
-                                <a class="text-light mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Otros servicios</a>
-                                <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Equipo</a>
-                                <a class="text-light mb-2" href="blog.html
+                                <a class="text-light mb-2" href="../index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Inicio</a>
+                                <a class="text-light mb-2" href="../about.html"><i class="bi bi-arrow-right text-primary me-2"></i>Sobre</a>
+                                <a class="text-light mb-2" href="../service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Otros servicios</a>
+                                <a class="text-light mb-2" href="../team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Equipo</a>
+                                <a class="text-light mb-2" href="../blog.html
                                 "><i class="bi bi-arrow-right text-primary me-2"></i>Blog</a>
-                                <a class="text-light" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contacto</a>
+                                <a class="text-light" href="../contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contacto</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -308,7 +330,7 @@
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6">
                     <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Comex Studio</a>. Todos los derechos reservados. 
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="../index.html">Comex Studio</a>. Todos los derechos reservados. 
                     </div>
                 </div>
             </div>
@@ -324,18 +346,21 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 
     <!-- Javascript Maps -->
-    <script src="lib/maps/localizacion.js"></script>
+    <script src="../lib/maps/localizacion.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnInWAxY1G6X2NubLdlPofyPRzghF7EWA&callback=iniciarMap"></script>
+
+    <!-- Javascript Alert -->
+    <script src="../js/alert.js"></script>
 </body>
 
 </html>
