@@ -3,12 +3,14 @@
         $myemail = 'info@comexstudio.com';
         $name = $_POST['nombre'];
         $email = $_POST['email'];
-        $planes = $_POST['plan']
+        $planes = $_POST['plan'];
         $message = $_POST['message'];
-
         $to = $myemail;
         $email_subject = "Nuevo mensaje: $subject";
-        $email_body = "Haz recibido un nuevo mensaje del sitio web Comex Studio Presupuestos. \n Nombre: $name \n Correo: $email \n Plan: $planes \n Mensaje: \n $message";
+        $email_body = "Haz recibido un nuevo mensaje del sitio web Comex Studio Presupuestos. 
+        \n Nombre: $name \n Correo: $email \n Plan: $planes \n Mensaje: $message";
+
+
         $headers = "From: $email";
 
         mail($to, $email_subject, $email_body, $headers);
