@@ -1,6 +1,6 @@
 <?php 
 
-        $myemail = 'info@comexstudio.com';
+        $myemail = 'subcripcion@comexstudio.com';
         $name = $_POST['inscripcion'];
 
         $to = $myemail;
